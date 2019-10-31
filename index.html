@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank you for your business</title>
+    <meta property="og:title" content="Thank you for your business" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="http://business.adriaan.io/" />
+    <meta property="og:url" content="http://business.adriaan.io/" />
+    <meta property="og:site_name" content="business.adriaan.io" />
+    <script type="application/ld+json">
+    {"headline":"Thank you for your business","@type":"WebSite","url":"http://business.adriaan.io/","name":"business.adriaan.io","@context":"http://schema.org"}</script>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1><a href="https://business.adriaan.io/">business.adriaan.io</a></h1>
+      <h4 id="company-name">Company name</h4>
+      <p>Adriaan</p>
+
+      <h4 id="address">Address<br></h4>
+      <p>Korteweegje 49<br>
+      3247 BH Dirksland</p>
+
+      <h4 id="btw-number">BTW-number<br /></h4>
+      <p><input type="text" value="NL015473260B01" readonly /> <span data-command="copy">Copy</span></p>
+
+      <h4 id="kvk-number">KvK-number<br /></h4>
+      <p>
+        <input type="text" value="60978856" readonly /> <span data-command="copy">Copy</span><br>
+        <a href="https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=609788560000">kvk.nl listing</a> (Chamber of commerce)
+      </p>
+
+      <h4 id="website">Website</h4>
+      <p><a href="https://adriaan.io/?source=business.adriaan.io">adriaan.io</a></p>
+    </div>
+
+    <script>
+      document.querySelector('[data-command="copy"]').addEventListener('click', (event) => {
+        event.target.parentNode.queryselector('input').select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+      })
+    </script>
+  </body>
+</html>
