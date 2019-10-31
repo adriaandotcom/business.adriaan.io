@@ -30,6 +30,12 @@
         padding: 5px;
         font-size: 16px;
       }
+      h4 {
+        margin: 0;
+      }
+      h4 + p {
+        margin-top: 0;
+      }
     </style>
   </head>
   <body>
@@ -58,9 +64,11 @@
     <script>
       document.querySelectorAll('[data-command="copy"]').forEach(element => {
         element.addEventListener('click', (event) => {
-          event.target.parentNode.querySelector('input').select()
+          const input = event.target.parentNode.querySelector('input')
+          input.select()
           document.execCommand('copy')
-          window.getSelection().removeAllRanges()
+          input.selectionStart = 0
+          input.selectionEnd = 0
         })
       })
     </script>
