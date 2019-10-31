@@ -63,12 +63,17 @@
 
     <script>
       document.querySelectorAll('[data-command="copy"]').forEach(element => {
-        element.addEventListener('click', (event) => {
+        button.addEventListener('click', (event) => {
           const input = event.target.parentNode.querySelector('input')
           input.select()
           document.execCommand('copy')
           input.selectionStart = 0
           input.selectionEnd = 0
+          const oldText = element.textContent
+          button.textContent = 'Copied!'
+          window.setTimeout(() => {
+            button.textContent = oldText
+          })
         })
       })
     </script>
