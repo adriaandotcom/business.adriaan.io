@@ -12,6 +12,25 @@
     <meta property="og:site_name" content="business.adriaan.io" />
     <script type="application/ld+json">
     {"headline":"Thank you for your business","@type":"WebSite","url":"http://business.adriaan.io/","name":"business.adriaan.io","@context":"http://schema.org"}</script>
+    <style>
+      body {
+        font-family: helvetica;
+        line-height: 150%;
+        font-weight: lighter;
+      }
+      a {
+        color: #c62b95;
+        text-decoration: none;
+      }
+      a:hover {
+        cursor: pointer;
+      }
+      input {
+        border: 1px solid #c62b95;
+        padding: 5px;
+        font-size: 16px;
+      }
+    </style>
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
@@ -24,11 +43,11 @@
       3247 BH Dirksland</p>
 
       <h4 id="btw-number">BTW-number<br /></h4>
-      <p><input type="text" value="NL015473260B01" readonly /> <span data-command="copy">Copy</span></p>
+      <p><input type="text" value="NL015473260B01" readonly /> <a data-command="copy">Copy</a></p>
 
       <h4 id="kvk-number">KvK-number<br /></h4>
       <p>
-        <input type="text" value="60978856" readonly /> <span data-command="copy">Copy</span><br>
+        <input type="text" value="60978856" readonly /> <a data-command="copy">Copy</a><br>
         <a href="https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=609788560000">kvk.nl listing</a> (Chamber of commerce)
       </p>
 
@@ -37,10 +56,12 @@
     </div>
 
     <script>
-      document.querySelector('[data-command="copy"]').addEventListener('click', (event) => {
-        event.target.parentNode.querySelector('input').select();
-        document.execCommand('copy');
-        window.getSelection().removeAllRanges();
+      document.querySelectorAll('[data-command="copy"]').forEach(element => {
+        element.addEventListener('click', (event) => {
+          event.target.parentNode.querySelector('input').select()
+          document.execCommand('copy')
+          window.getSelection().removeAllRanges()
+        })
       })
     </script>
   </body>
