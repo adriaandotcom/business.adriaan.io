@@ -63,7 +63,7 @@
     </div>
 
     <script>
-      document.querySelectorAll('[data-command="copy"]').forEach(element => {
+      document.querySelectorAll('[data-command="copy"]').forEach(button => {
         button.addEventListener('click', (event) => {
           const input = event.target.parentNode.querySelector('input')
           input.select()
